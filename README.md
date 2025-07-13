@@ -1,6 +1,6 @@
+
 # Crop-Prediction
 Crop Prediction Project
-
 
 # 🌾 Crop Prediction Web Application
 
@@ -18,7 +18,7 @@ This is a full-stack machine learning web application that predicts the most sui
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 | Component    | Technology     |
 |--------------|----------------|
@@ -29,7 +29,7 @@ This is a full-stack machine learning web application that predicts the most sui
 
 ---
 
-##  Input Parameters
+## Input Parameters
 
 | Parameter           | Description                          |
 |---------------------|--------------------------------------|
@@ -49,46 +49,95 @@ This is a full-stack machine learning web application that predicts the most sui
 
 ---
 
-##  How to Run the Project
+## How to Run the Project
 
 ### 1. Clone the Repository
 
 ```bash
-git  git clone https://github.com/ravikumar266/Crop-Prediction.git
-
-
+git clone https://github.com/ravikumar266/Crop-Prediction.git
 cd Crop-Prediction
+```
 
-### creating virtual envirment
+### 2. Create Virtual Environment
 
+```bash
 python -m venv venv
+
 # For Windows
 venv\Scripts\activate
+
 # For Mac/Linux
 source venv/bin/activate
+```
 
-## install dependecies
+### 3. Install Dependencies
+
 
 pip install -r requirements.txt
+```
 
-##  Run the Backend (FastAPI)
+### 4. Run the Backend (FastAPI)
+
 
 cd app
-
 uvicorn main:app --reload
+```
 
-##  Run the Frontend (Streamlit)   open new terminal but not close old terminal 
+### 5. Run the Frontend (Streamlit)
 
-cd Crop-Prediction ## if required
+##Open a new terminal without closing the old one:_
+
 
 cd streamlit
-
 streamlit run frontend.py
+```
 
 
 
+## 🐳 Docker Deployment (Optional)
+
+### 🛠️ Build Docker Image Locally
 
 
+docker build -t crop-prediction-app .
+```
+
+### ▶️ Run the Docker Container
 
 
+docker run -p 8000:8000 -p 8501:8501 crop-prediction-app
+```
 
+- FastAPI (Backend): http://localhost:8000  
+- Streamlit (Frontend): http://localhost:8501
+
+### 📥 Pull from Docker Hub
+
+
+docker pull ravikum/crop-prediction-app:v1
+docker run -p 8000:8000 -p 8501:8501 ravikum/crop-prediction-app:v1
+```
+
+### 📤 Push to Docker Hub
+
+
+docker tag crop-prediction-app ravikum/crop-prediction-app:v1
+docker push ravikum/crop-prediction-app:v1
+```
+
+ ##**Docker Hub Repo:**  
+ https://hub.docker.com/r/ravikum/crop-prediction-app
+
+---
+
+### ⚙️ Notes
+
+- Make sure Docker is installed and running.
+-
+- Access FastAPI and Streamlit on ports **8000** and **8501** respectively.
+
+---
+
+##  Author
+
+Made with by **Ravi Kumar**
